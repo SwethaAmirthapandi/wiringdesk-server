@@ -4,7 +4,7 @@ import sqlite3
 from datetime import datetime
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 conn = sqlite3.connect("data.db", check_same_thread=False)
 cur = conn.cursor()
 
